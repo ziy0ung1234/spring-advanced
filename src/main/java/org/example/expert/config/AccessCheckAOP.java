@@ -17,7 +17,6 @@ import java.time.LocalDateTime;
 @Component
 @Slf4j
 public class AccessCheckAOP {
-    //TODO 어노테이션으로 변경해볼 것
     @Pointcut("@annotation(org.example.expert.config.OnlyAdmin)")
     public void adminApi() {}
 
