@@ -22,7 +22,7 @@ public class AccessCheckAOP {
     public void adminApi() {}
 
     @Around("adminApi()")
-    public Object executionTime(ProceedingJoinPoint joinPoint) throws Throwable {
+    public Object accessLogToInfo(ProceedingJoinPoint joinPoint) throws Throwable {
         StringBuilder logInfo = new StringBuilder();
 
         //유저 ID, 요청 URI 정보는 시그니처에 없어서 RequestContextHolder의 getRequestAttributes 메서드를 사용
