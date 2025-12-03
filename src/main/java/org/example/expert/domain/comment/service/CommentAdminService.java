@@ -1,7 +1,9 @@
 package org.example.expert.domain.comment.service;
 
 import lombok.RequiredArgsConstructor;
+import org.example.expert.domain.comment.entity.Comment;
 import org.example.expert.domain.comment.repository.CommentRepository;
+import org.example.expert.domain.common.exception.InvalidRequestException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +15,8 @@ public class CommentAdminService {
 
     @Transactional
     public void deleteComment(long commentId) {
-        commentRepository.deleteById(commentId);
+        Comment comment = commentRepository.findById(commentId)
+                .orElseThrow(() -> new InvalidRequestException("댓글이 존재하지 않습니다."));
+        commentRepository.delete(comment);
     }
 }
