@@ -48,7 +48,7 @@ public class TodoService {
 
     @Transactional(readOnly = true)
     public Page<TodoResponse> getTodos(Pageable pageable) {
-        Page<Todo> todos = todoRepository.findAll(pageable);
+        Page<Todo> todos = todoRepository.findAllBy(pageable);
 
         return todos.map(todo -> new TodoResponse(
                 todo.getId(),
