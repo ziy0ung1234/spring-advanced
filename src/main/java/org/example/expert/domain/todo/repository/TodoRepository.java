@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface TodoRepository extends JpaRepository<Todo, Long> {
 
     @EntityGraph(attributePaths = {"user"})
-    Page<Todo> findAllByOrderByModifiedAtDesc(Pageable pageable);
+    Page<Todo> findAllBy(Pageable pageable);
 
     @Query("SELECT t FROM Todo t " +
             "LEFT JOIN FETCH t.user " +
