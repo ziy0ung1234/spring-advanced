@@ -15,3 +15,4 @@
 ## [Level6] 위 제시된 기능 이외 ‘내’가 정의한 문제와 해결 과정
 블로그 첨부 [Level6 정리 블로그](https://devz0.tistory.com/114)
 ## [Level7] 테스트 커버리지
+![테스트 커버리지](https://github.com/user-attachments/assets/ca59c549-a114-4da5-86b5-ea4811270d09)
